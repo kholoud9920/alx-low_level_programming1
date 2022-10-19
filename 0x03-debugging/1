@@ -1,0 +1,43 @@
+nclude <time.h>                                                                                                                  
+
+  3  #include <stdio.h>                                                                                                                 
+
+    4 /**                                                                                                                                 
+
+	  5  *main - Prints a random number and states whether                                                                                  
+
+	    6  *it is positive, negative, or zero.                                                                                                
+
+	      7  *                                                                                                                                  
+
+	        8  * Return: Always 0.                                                                                                                
+
+		  9  */                                                                                                                                 
+
+     10 int main(void)                                                                                                                      
+
+	 11 {                                                                                                                                   
+
+		  12         int n;                                                                                                                      
+
+		   13                                                                                                                                     
+
+			    14         srand(time(0));                                                                                                             
+
+		    15                                                                                                                                     
+
+			     16         n = rand() - RAND_MAX / 2;                                                                                                  
+
+		     17                                                                                                                                     
+
+			      18         if (n > 0)                                                                                                                  
+
+			       19                 printf("%d is positive\n", n);                                                                                      
+
+		      20         else if (n < 0)                                                                                                             
+
+			       21                 printf("%d is negative\n", n);                                                                                      
+
+		       22         else                                                                                                                        
+
+			        23                 printf("%d is zero\n", n);   

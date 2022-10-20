@@ -4,7 +4,7 @@
   *@c: char used
   *Return: char
   */
-int _putchar(char c)
+int _putchar(int c)
 {
 	return(c);
 }

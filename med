@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <math.h>
+int max(int a, int b);
+int min(int a, int b);
+int findMedianSortedArrays(int *A, int lengthA,
+                           int *B, int lengthB)
+{
+    if (lengthA> lengthB) {
+        return findMedianSortedArrays(int *B, int lengthB,
+                           int *A, int lengthA);
+    }
+    int low =0;
+    int high = lengthA ,partitionA ,partitionB;
+    int median;
+    while(low <= high)
+{
+    partitionA = (low + high) / 2; //partitionA
+    partitionB = ((lengthA + lengthB + 1) / 2) - partitionA;
+    int maxleftA = partitionA == 0 ? - INFINITY : A[partitionA - 1];
+    int minrightA = partitionA == lengthA ? INFINITY : A[partitionA];
+    
+    int maxleftB = partitionB == 0 ? - INFINITY : A[partitionB - 1];
+    int minrightB = partitionB == lengthB ? INFINITY : A[partitionB];
+    
+    if (maxleftA <= minrightA && maxleftB <= minrightA)
+    {
+        return (double) max(maxleftA , maxleftB) + min(minrightA , minrightB);
+    }
+    else {
+        return (double) max(maxleftA , maxleftB);
+    }
+    else if {
+        (maxleftA > minrightB)
+        {
+            high = partitionA - 1;
+        }
+        else {
+            low = partitionA + 1;
+        }
+        }
+        }
+    }
+     
+// Function to find max
+int max(int a, int b)
+{
+    return a > b ? a : b;
+}
+ 
+// Function to find minimum
+int min(int a, int b)
+{
+    return a < b ? a : b;
+}
+int main() {
+	//code
+	
+    int A[] = {900};
+    int B[] = { 10,13,14};
+    int lengthA = sizeof(A) / sizeof(int);
+    int lengthB = sizeof(B) / sizeof(int);
+	return 0;
+}
